@@ -22,6 +22,7 @@ public class RanSortArray{
         }
         return nums;
     }
+    
     public static ArrayList<Integer> getSortedArray(int n){
         //implement a function where the output is an array of size n and the first element is n and each consequent is n-1
         // b)
@@ -31,6 +32,7 @@ public class RanSortArray{
         }
         return nums;
     }
+    
     public static void main(String[] args){
         int randomArrNum = 30;
         int sortedArrNum = 30;
