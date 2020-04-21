@@ -16,6 +16,7 @@ class Node{
         this.value = key;
         this.balFactor = 0;
     }
+   
     public void leftRotateBalFactorUpdate(){
         //stores balance factors of all nodes involved
             int balFac = this.balFactor;
@@ -31,6 +32,7 @@ class Node{
             //gets the lowest value and sets the right node's balance factor to that value
             this.right.balFactor = Math.min(balFac-2, rightbalFac-1);
     }
+   
     public void leftRotate(){
         //avoiding confusion
         //"this" == current "node" that is being used
@@ -64,6 +66,7 @@ class Node{
             this.parent = rightnode;
         }
     }
+   
     public void rightRotateBalFactorUpdate(){
         int balFac = this.balFactor;
         int leftbalFac = this.left.balFactor;
@@ -78,6 +81,7 @@ class Node{
         //get the highest value and sets the left node's balance factor to that value
         this.left.balFactor = Math.max(balFac+2, leftbalFac+1);
     }
+   
     public void rightRotate(){
         //avoiding confusion
         //"this" == current "node" that is being used
@@ -131,8 +135,7 @@ public class AVLTree{
         }
         return nodeList;
     }
-    
-    //right rotation function
+   
     public Node rightRotation(Node node){
         if(node == root){
             root = node.left;
@@ -140,7 +143,7 @@ public class AVLTree{
         node.rightRotate();
         return node.parent;
     }
-    //left rotation function
+    
     public Node leftRotation(Node node){
         if(node == root){
             root = node.right;
@@ -148,7 +151,7 @@ public class AVLTree{
         node.leftRotate();
         return node.parent;
     }
-    //search function to find value that is asked
+    
     public Node search(int key) {
         Node curr = root;
         while (curr != null) {
