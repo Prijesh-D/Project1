@@ -6,6 +6,7 @@
 */
 import java.io.*; 
 import java.util.*; 
+
 class Node { 
     int data; 
     Node left, right;
@@ -15,6 +16,7 @@ class Node {
         left = right = null;
     }
 }
+
 public class BinTree {
     Node root;
     public static ArrayList<Node> inOrderAppend(Node node){
@@ -31,6 +33,7 @@ public class BinTree {
         }
         return nodeList;
     }
+    
     public static Node insertIter(Node node, int val){
         Node prevNode= null;
         if(node == null){
@@ -55,6 +58,7 @@ public class BinTree {
         }
         return prevNode;
     }
+    
     public static Node findMinIter(Node node){
         //finds min in the node passed
         if(node == null){
@@ -64,6 +68,7 @@ public class BinTree {
             node = node.left;
         return node;
     }
+    
     public static Node findNextIter(Node node, int val){
         Node tempNode = null;
         while(node!=null){
@@ -76,6 +81,7 @@ public class BinTree {
         }
         return tempNode;
     }
+   
     public static Node findMaxIter(Node node){
         //finds max in the node passed
         if(node == null){
@@ -85,6 +91,7 @@ public class BinTree {
             node = node.right;
         return node.data;
     }
+    
     public static Node findPrevIter(Node node, int val){
         Node tempNode = null;
         while(node!=null){
@@ -98,28 +105,21 @@ public class BinTree {
         return tempNode;
     }
 
-///////////////////////////////////////////////////////////////////////////////////////////////// FINALLY                   ?////////////////////////////////////////
-/// Insert
-/// Find Max                                                                        // Delete -> Needs to be implemented iteratively
-///Find Min      ----------------------------> Done                                             
-///Find Next
-/// Find Prev
-
     public static void main(String args[])  {  
-    Node root = null;  
-    root = insertIter(root, 50);  
-    insertIter(root, 30);  
-    insertIter(root, 20);  
-    insertIter(root, 40);  
-    insertIter(root, 70);  
-    insertIter(root, 60);  
-    insertIter(root, 80);  
-    Node test = findNextIter(root, 40);
-    System.out.println(test.data);
-    Node test2 = findPrevIter(root, 40);
-    System.out.println(test2.data);
-    ArrayList<Node> list = inOrderAppend(root);
-    list.forEach((Node value) -> System.out.print(value.data + " "));
-    
-}  
+        Node root = null;  
+        root = insertIter(root, 50);  
+        insertIter(root, 30);  
+        insertIter(root, 20);  
+        insertIter(root, 40);  
+        insertIter(root, 70);  
+        insertIter(root, 60);  
+        insertIter(root, 80);  
+        Node test = findNextIter(root, 40);
+        System.out.println(test.data);
+        Node test2 = findPrevIter(root, 40);
+        System.out.println(test2.data);
+        ArrayList<Node> list = inOrderAppend(root);
+        list.forEach((Node value) -> System.out.print(value.data + " "));
+
+    }  
 } 
