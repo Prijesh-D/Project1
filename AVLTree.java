@@ -23,19 +23,15 @@ class Node{
             int rightbalFac = this.right.balFactor;
             //updates balance factor
             if(this.right.balFactor <=0){
-                this.balFactor--; //subtract since right side balance factor will be negative
+                this.balFactor--;
             }
             else{
-                // if greater than 0, update balFactor of current by subtracting right bal factor -1
                 this.balFactor = this.balFactor - this.right.balFactor-1; 
             }
-            //gets the lowest value and sets the right node's balance factor to that value
             this.right.balFactor = Math.min(balFac-2, rightbalFac-1);
     }
    
     public void leftRotate(){
-        //avoiding confusion
-        //"this" == current "node" that is being used
         //checks if the right node of curr is null
         if(this.right!=null){
             //left helper for updating balance factors
@@ -72,13 +68,11 @@ class Node{
         int leftbalFac = this.left.balFactor;
         //updates balance factor
         if(leftbalFac>=0){
-            this.balFactor++; // add since left side balance factor will be positive
+            this.balFactor++;
         }
         else{
-            //if less than 0, update balFactor of current by subtracting left balance factor + 1
             this.balFactor = this.balFactor - this.left.balFactor+1;
         }
-        //get the highest value and sets the left node's balance factor to that value
         this.left.balFactor = Math.max(balFac+2, leftbalFac+1);
     }
    
